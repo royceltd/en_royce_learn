@@ -1,0 +1,104 @@
+{
+  "doctype": "DocType",
+  "name": "Royce Learn Guide",
+  "module": "Royce Learn",
+  "engine": "InnoDB",
+  "autoname": "hash",
+  "field_order": [
+    "title",
+    "summary",
+    "category",
+    "content_version",
+    "body",
+    "video_id",
+    "reference_doctype",
+    "required_apps",
+    "keywords",
+    "published"
+  ],
+  "fields": [
+    {
+      "fieldname": "title",
+      "fieldtype": "Data",
+      "label": "Title",
+      "reqd": 1,
+      "in_list_view": 1,
+      "read_only": 1
+    },
+    {
+      "fieldname": "summary",
+      "fieldtype": "Small Text",
+      "label": "Summary",
+      "read_only": 1
+    },
+    {
+      "fieldname": "category",
+      "fieldtype": "Data",
+      "label": "Topic",
+      "in_list_view": 1,
+      "read_only": 1
+    },
+    {
+      "fieldname": "content_version",
+      "fieldtype": "Data",
+      "label": "Content Version",
+      "read_only": 1
+    },
+    {
+      "fieldname": "body",
+      "fieldtype": "Long Text",
+      "label": "Written Instructions",
+      "read_only": 1
+    },
+    {
+      "fieldname": "video_id",
+      "fieldtype": "Data",
+      "label": "YouTube Video ID",
+      "read_only": 1
+    },
+    {
+      "fieldname": "reference_doctype",
+      "fieldtype": "Link",
+      "label": "Related Screen",
+      "options": "DocType",
+      "read_only": 1
+    },
+    {
+      "fieldname": "required_apps",
+      "fieldtype": "Small Text",
+      "label": "Required Apps",
+      "read_only": 1
+    },
+    {
+      "fieldname": "keywords",
+      "fieldtype": "Small Text",
+      "label": "Keywords",
+      "read_only": 1
+    },
+    {
+      "fieldname": "published",
+      "fieldtype": "Check",
+      "label": "Published",
+      "default": "1",
+      "read_only": 1
+    }
+  ],
+  "permissions": [
+    {
+      "role": "Desk User",
+      "read": 1,
+      "select": 1
+    },
+    {
+      "role": "System Manager",
+      "read": 1,
+      "select": 1
+    }
+  ],
+  "track_changes": 1,
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "actions": [],
+  "links": [],
+  "states": []
+}

@@ -1,0 +1,16 @@
+{
+  "doctype": "Workspace Sidebar",
+  "name": "Royce Learn",
+  "title": "Royce Learn",
+  "app": "royce_learn",
+  "standard": 1,
+  "header_icon": "education",
+  "items": [
+    {
+      "label": "Royce Learn",
+      "link_type": "Workspace",
+      "link_to": "Royce Learn",
+      "type": "Link"
+    }
+  ]
+}

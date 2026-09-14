@@ -1,0 +1,208 @@
+{
+  "schema_version": 1,
+  "guides": [
+    {
+      "id": "company-details",
+      "title": "Confirm your company details",
+      "summary": "Review the business configuration created during provisioning.",
+      "category": "Getting Started",
+      "doctype": "Company",
+      "permission": "read",
+      "required_apps": [
+        "erpnext"
+      ],
+      "version": "1.0.0",
+      "minutes": 3,
+      "video_id": "",
+      "keywords": [],
+      "body": "Your provisioned site already has a Company and a Kenya accounting baseline. Review these before entering transactions.\n\n1. Open Company and select the company shown in your Getting Started dashboard.\n2. Check the legal business name, abbreviation, country, and default currency.\n3. Review company addresses and contact details where configured.\n4. Ask your accountant to review the chart of accounts and applicable tax templates.\n5. Check that a Fiscal Year covers your transaction dates. Provisioning creates a starting baseline; confirm your own accounting period.\n6. Return to Royce Learn and confirm this task for the selected company.\n\nChanging company settings can affect subsequent transactions. Make changes with the appropriate permissions and accounting review.\n\nIf you cannot edit Company, ask a company administrator to complete this task. Selecting another company shows a separate checklist."
+    },
+    {
+      "id": "users-and-roles",
+      "title": "Add your team and review roles",
+      "summary": "Give each staff member the access needed for their work.",
+      "category": "Getting Started",
+      "doctype": "User",
+      "permission": "read",
+      "required_apps": [
+        "erpnext"
+      ],
+      "version": "1.0.0",
+      "minutes": 3,
+      "video_id": "",
+      "keywords": [],
+      "body": "1. Ask a System Manager to open User and create a separate account for each staff member.\n2. Use System User for staff who need the ERP Desk.\n3. Assign roles matching their responsibilities, such as selling or accounting.\n4. Review User Permissions where staff should be limited to specific companies.\n5. Verify access using the staff member's own account before they begin work.\n6. Return to the selected company's checklist and confirm that its team access is ready.\n\nUsers belong to the site, rather than a single company. This task requires explicit company confirmation so access for one company does not automatically complete another company's setup.\n\nUse named accounts for daily work and keep administrative access limited. If staff cannot see a screen, review roles and company permissions rather than sharing an administrator account."
+    },
+    {
+      "id": "items",
+      "title": "Add products or services",
+      "summary": "Create the items your company will sell or purchase.",
+      "category": "Sales",
+      "doctype": "Item",
+      "permission": "read",
+      "required_apps": [
+        "erpnext"
+      ],
+      "version": "1.0.0",
+      "minutes": 3,
+      "video_id": "",
+      "keywords": [
+        "product",
+        "service",
+        "inventory"
+      ],
+      "body": "1. Open Item and select New if you have create permission.\n2. Enter a clear Item Code and Item Name, then choose an Item Group and stock unit of measure.\n3. For services, review whether Maintain Stock should be disabled. For stocked products, configure inventory details with your stock administrator.\n4. Review item defaults for the company that will use the item, including accounts and warehouses where applicable.\n5. Save the item and confirm it can be selected on the intended transaction.\n6. Return to Royce Learn and confirm that the selected company's products or services are ready.\n\nItems are shared site masters. Their existence alone does not prove that they are configured for every company.\n\nIf an item cannot be selected, check whether it is disabled, whether the transaction allows it, and whether you have access. Tax treatment needs separate review."
+    },
+    {
+      "id": "customers",
+      "title": "Add your customers",
+      "summary": "Create customer records before invoicing.",
+      "category": "Sales",
+      "doctype": "Customer",
+      "permission": "read",
+      "required_apps": [
+        "erpnext"
+      ],
+      "version": "1.0.0",
+      "minutes": 3,
+      "video_id": "",
+      "keywords": [
+        "contact",
+        "address"
+      ],
+      "body": "1. Open Customer and choose New if you have create permission.\n2. Enter the customer name and select the appropriate customer type, group, and territory.\n3. Save, then add or link contact and address records as needed.\n4. Review company-specific receivable account defaults with your accountant where required.\n5. Check that the customer can be selected on a Sales Invoice for the intended company.\n6. Confirm this task on that company's Getting Started checklist.\n\nCustomer records are shared within a site. This checklist uses explicit confirmation rather than treating any customer record as setup for all companies.\n\nAvoid duplicate records by searching first. If an address does not appear on an invoice, check that its links point to the correct customer."
+    },
+    {
+      "id": "opening-balances",
+      "title": "Review opening balances",
+      "summary": "Decide how existing balances will enter your ERP.",
+      "category": "Accounting",
+      "doctype": "Journal Entry",
+      "permission": "read",
+      "required_apps": [
+        "erpnext"
+      ],
+      "version": "1.0.0",
+      "minutes": 5,
+      "video_id": "",
+      "keywords": [],
+      "body": "Opening balances depend on whether your business is new or migrating existing books.\n\n1. Agree on a cutover date with your accountant.\n2. Reconcile balances in the previous system before importing them.\n3. Identify general ledger balances, unpaid customer and supplier invoices, stock, and bank balances.\n4. Use the appropriate ERPNext opening tools for each category. Do not enter the same balance through multiple tools.\n5. Review the resulting trial balance and outstanding reports before starting normal operations.\n6. Confirm the task only after reconciliation. If no opening balances apply, choose Not applicable and record the reason.\n\nThis guide is a planning checklist, not an accounting entry recipe. Your accountant must determine the actual entries and reconciliation for your business."
+    },
+    {
+      "id": "sales-invoice",
+      "title": "Create and submit a sales invoice",
+      "summary": "Complete your first company-specific invoicing transaction.",
+      "category": "Sales",
+      "doctype": "Sales Invoice",
+      "permission": "read",
+      "required_apps": [
+        "erpnext"
+      ],
+      "version": "1.0.0",
+      "minutes": 4,
+      "video_id": "",
+      "keywords": [
+        "billing",
+        "invoice",
+        "submit"
+      ],
+      "body": "1. Open Sales Invoice and choose New if you have create permission.\n2. Select the intended Company and Customer. Check the posting date and due date.\n3. Add products or services, quantities, and rates.\n4. Review currency, receivable account, addresses, and any applicable taxes with your accountant's approved configuration.\n5. Save and review the totals. A saved draft has not completed the accounting transaction.\n6. Submit only when the invoice is correct and you have the required permission.\n7. Open print preview and check the customer-facing document before sending it.\n\nRoyce Learn detects a submitted non-return invoice for the selected company. Drafts and invoices in other companies do not complete the task. If the qualifying invoice is cancelled, the evidence check updates when the dashboard reloads.\n\nIf submission fails, read the exact validation message. Common causes include missing account defaults, unavailable stock, or dates outside an active fiscal year. This guide does not assume eTIMS is installed or configured."
+    },
+    {
+      "id": "receive-payment",
+      "title": "Receive payment against an invoice",
+      "summary": "Record and allocate a customer payment.",
+      "category": "Accounting",
+      "doctype": "Payment Entry",
+      "permission": "read",
+      "required_apps": [
+        "erpnext"
+      ],
+      "version": "1.0.0",
+      "minutes": 4,
+      "video_id": "",
+      "keywords": [
+        "receipt",
+        "allocation",
+        "bank"
+      ],
+      "body": "1. Open the submitted Sales Invoice and use its payment action where available, or create a Payment Entry.\n2. Select Receive and Customer, then confirm the Company and customer.\n3. Choose the correct bank or cash account and enter the actual payment amount and date.\n4. In References, select the Sales Invoice and review the allocated amount.\n5. Check any difference or exchange-rate entries with your accountant.\n6. Save, review, and submit when correct.\n7. Check the invoice's outstanding balance after posting.\n\nRoyce Learn checks for a submitted customer receipt in the selected company with a positive allocation to a Sales Invoice. An unallocated advance or draft payment does not complete this task.\n\nIf an invoice is missing from the reference list, check its company, customer, submission status, and outstanding amount. Record real payments only; reading this lesson is separate from submitting a payment."
+    },
+    {
+      "id": "payroll-getting-started",
+      "title": "Review your payroll baseline",
+      "summary": "Understand what Royce Payroll configures and what you still need to prepare.",
+      "category": "Payroll",
+      "doctype": "Employee",
+      "permission": "read",
+      "required_apps": [
+        "erpnext",
+        "hrms",
+        "royce_payroll_ke"
+      ],
+      "version": "1.0.0",
+      "minutes": 5,
+      "video_id": "",
+      "keywords": [],
+      "body": "Royce provisioning can prepare statutory accounts, salary components, a salary structure, payroll periods, and holiday settings through Royce Payroll KE.\n\n1. Ask your payroll administrator to review the effective Payroll Rates record and the generated structure.\n2. Create Employee records for the correct company and verify employee identifiers and payroll details.\n3. Review Salary Structure Assignments and dates for each employee.\n4. Confirm attendance, leave, and holiday configuration before processing payroll.\n5. Validate a representative payroll run and its reports before production use.\n\nGenerated defaults do not replace review of current statutory rules or employee-specific circumstances. This introductory guide intentionally contains no hard-coded statutory rates."
+    },
+    {
+      "id": "sms-getting-started",
+      "title": "Configure Royce Talk",
+      "summary": "Prepare SMS settings before sending notifications.",
+      "category": "Royce Apps",
+      "doctype": "RoyceTalk Settings",
+      "permission": "read",
+      "required_apps": [
+        "erpnext",
+        "royce_talk"
+      ],
+      "version": "1.0.0",
+      "minutes": 3,
+      "video_id": "",
+      "keywords": [],
+      "body": "Installing Royce Talk does not create an SMS account or register a Sender ID.\n\n1. Obtain your approved Sender ID and Royce Talk API credentials through your account process.\n2. Open RoyceTalk Settings and configure them using an authorized administrator account.\n3. Review balance and perform a test send to a number you control.\n4. Review notification templates before enabling automated messages.\n5. For marketing campaigns, review recipients and consent before sending.\n\nRoyce provisioning leaves the site-wide SMS gateway override disabled. Enabling it affects Frappe's built-in SMS traffic too, so review that setting deliberately.\n\nKeep API credentials private. If sends fail, inspect RoyceTalk SMS Log and the account balance."
+    }
+  ],
+  "paths": [
+    {
+      "id": "getting-started",
+      "title": "Getting Started",
+      "summary": "Prepare your company and team.",
+      "guides": [
+        "company-details",
+        "users-and-roles",
+        "items",
+        "customers",
+        "opening-balances"
+      ]
+    },
+    {
+      "id": "sales-basics",
+      "title": "Sales Basics",
+      "summary": "Move from customer setup to invoice and payment.",
+      "guides": [
+        "customers",
+        "items",
+        "sales-invoice",
+        "receive-payment"
+      ]
+    },
+    {
+      "id": "payroll-basics",
+      "title": "Payroll Basics",
+      "summary": "Review your payroll baseline before processing.",
+      "guides": [
+        "payroll-getting-started"
+      ]
+    },
+    {
+      "id": "sms-basics",
+      "title": "Royce Talk Basics",
+      "summary": "Set up customer notifications.",
+      "guides": [
+        "sms-getting-started"
+      ]
+    }
+  ]
+}

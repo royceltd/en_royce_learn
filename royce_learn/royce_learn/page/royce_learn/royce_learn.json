@@ -1,0 +1,17 @@
+{
+  "doctype": "Page",
+  "name": "royce-learn",
+  "page_name": "royce-learn",
+  "module": "Royce Learn",
+  "title": "Royce Learn",
+  "standard": "Yes",
+  "system_page": 0,
+  "roles": [
+    {
+      "role": "Desk User"
+    },
+    {
+      "role": "System Manager"
+    }
+  ]
+}

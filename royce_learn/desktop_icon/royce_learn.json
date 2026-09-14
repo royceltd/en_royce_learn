@@ -1,0 +1,15 @@
+{
+  "doctype": "Desktop Icon",
+  "name": "Royce Learn",
+  "label": "Royce Learn",
+  "app": "royce_learn",
+  "standard": 1,
+  "hidden": 0,
+  "icon_type": "Link",
+  "link_type": "Workspace Sidebar",
+  "link_to": "Royce Learn",
+  "icon": "education",
+  "bg_color": "blue",
+  "roles": [],
+  "logo_url": "/assets/royce_learn/icons/royce_learn.svg"
+}

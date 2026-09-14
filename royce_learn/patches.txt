@@ -1,0 +1,1 @@
+# Packaged content is reconciled by after_migrate, without deleting progress.

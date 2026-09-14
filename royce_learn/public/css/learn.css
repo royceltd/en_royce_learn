@@ -1,0 +1,18 @@
+.royce-learn {max-width: 1100px; margin: 0 auto; padding: 24px 12px;}
+.royce-learn h1 {font-size: 28px; margin-bottom: 8px;}
+.royce-learn .rl-intro {color: var(--text-muted); margin-bottom: 24px;}
+.royce-learn .rl-controls {display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 20px;}
+.royce-learn .rl-controls input {flex: 1; min-width: 180px;}
+.royce-learn .rl-grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 16px;}
+.royce-learn .rl-card {padding: 20px; border: 1px solid var(--border-color); border-radius: 12px; background: var(--card-bg);}
+.royce-learn .rl-card h3 {font-size: 17px;}
+.royce-learn .rl-card p {color: var(--text-muted);}
+.royce-learn .rl-step {display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 16px 0; border-bottom: 1px solid var(--border-color);}
+.royce-learn .rl-actions {display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px;}
+.royce-learn .rl-progress {height: 8px; border-radius: 8px; background: var(--control-bg); margin: 12px 0; overflow: hidden;}
+.royce-learn .rl-progress span {display: block; height: 100%; background: var(--primary);}
+.royce-learn .rl-status {font-size: 12px; color: var(--text-muted);}
+.royce-learn .rl-section {margin-top: 28px;}
+.rl-guide-body {white-space: pre-wrap; line-height: 1.7; font-family: inherit; padding: 8px 0;}
+.rl-video {width: 100%; aspect-ratio: 16/9; border: 0; border-radius: 8px;}
+@media (max-width: 600px) {.royce-learn .rl-step {align-items: flex-start; flex-direction: column;}}
