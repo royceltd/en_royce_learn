@@ -4,7 +4,7 @@
     $(document).on('form-refresh.royce_learn', (event, frm) => {
         if (!frm || !types.has(frm.doctype)) return;
         frm.add_custom_button(__('Help with this task'), () => {
-            frappe.set_route('royce-learn', {doctype: frm.doctype});
+            frappe.set_route('getting-started', {doctype: frm.doctype});
         });
     });
 })();

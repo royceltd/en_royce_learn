@@ -1,6 +1,6 @@
 {
   "doctype": "Workspace",
-  "name": "Royce Learn Hub",
+  "name": "Royce Learn",
   "label": "Royce Learn",
   "title": "Royce Learn",
   "module": "Royce Learn",
@@ -17,7 +17,7 @@
     {
       "label": "Getting Started & Guides",
       "type": "Page",
-      "link_to": "royce-learn",
+      "link_to": "getting-started",
       "color": "Blue"
     }
   ]

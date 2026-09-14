@@ -82,11 +82,14 @@ for name, fields in schemas.items():
     )
 
 write(
-    MODULE / "page" / "royce_learn" / "royce_learn.json",
+    # Deliberately NOT named "royce_learn"/"royce-learn" -- see the Workspace
+    # comment below for why. Folder/file names match the Page's own "name"
+    # (Frappe's page-loading convention), so both had to move together.
+    MODULE / "page" / "getting_started" / "getting_started.json",
     {
         "doctype": "Page",
-        "name": "royce-learn",
-        "page_name": "royce-learn",
+        "name": "getting-started",
+        "page_name": "getting-started",
         "module": "Royce Learn",
         "title": "Royce Learn",
         "standard": "Yes",
@@ -106,14 +109,26 @@ write(
     MODULE / "workspace" / "royce_learn" / "royce_learn.json",
     {
         "doctype": "Workspace",
-        # Deliberately NOT "Royce Learn" -- Frappe slugifies a Workspace's own
-        # name to its route, and a bare "Royce Learn" collides with the Page
-        # below (route "royce-learn"), which the router always resolves as the
-        # Workspace first -- silently making the actual content page
-        # unreachable and its own shortcut a no-op back to itself. Real bug,
-        # found live in production 2026-09-14. label/title stay "Royce Learn"
-        # since only "name" drives routing.
-        "name": "Royce Learn Hub",
+        # MUST be "Royce Learn" -- not "royce-learn"/"Royce Learn Hub"/anything
+        # else. Two real bugs already came from getting this wrong, both found
+        # live in production 2026-09-14:
+        # (1) naming it to match the app's own route ("Royce Learn" slugifies
+        #     to "royce-learn") collided with the content Page's own route --
+        #     the router always resolves a bare /app/royce-learn as the
+        #     Workspace first, silently making the Page unreachable and its own
+        #     shortcut a no-op back to itself. Fixed by moving the *Page* to
+        #     "getting-started" instead (see above), not the Workspace.
+        # (2) renaming the Workspace itself to "Royce Learn Hub" to dodge (1)
+        #     broke Frappe's own app<->workspace naming convention: it started
+        #     auto-generating a second, orphaned "Royce Learn Hub" Workspace
+        #     Sidebar (app=None) alongside the real one, producing two visibly
+        #     different Desk icons for one app and losing this app's own
+        #     sidebar context in favor of whatever ERPNext workspace was last
+        #     active. The Workspace's name must match the app's natural
+        #     identity for both the app-switcher and sidebar-grouping to
+        #     collapse into one correctly; it is the Page's name that has to
+        #     move, never this one.
+        "name": "Royce Learn",
         "label": "Royce Learn",
         "title": "Royce Learn",
         "module": "Royce Learn",
@@ -127,7 +142,7 @@ write(
         "charts": [],
         "number_cards": [],
         "shortcuts": [
-            {"label": "Getting Started & Guides", "type": "Page", "link_to": "royce-learn", "color": "Blue"}
+            {"label": "Getting Started & Guides", "type": "Page", "link_to": "getting-started", "color": "Blue"}
         ],
     },
 )
@@ -140,9 +155,7 @@ write(
         "app": "royce_learn",
         "standard": 1,
         "header_icon": "education",
-        "items": [
-            {"label": "Royce Learn", "link_type": "Workspace", "link_to": "Royce Learn Hub", "type": "Link"}
-        ],
+        "items": [{"label": "Royce Learn", "link_type": "Workspace", "link_to": "Royce Learn", "type": "Link"}],
     },
 )
 write(

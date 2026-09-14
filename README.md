@@ -31,7 +31,7 @@ bench --site <staging-site> migrate
 bench --site <staging-site> clear-cache
 ```
 
-Open Royce Learn from the Desk, or navigate to the `royce-learn` Page.
+Open Royce Learn from the Desk, or navigate to the `getting-started` Page.
 Installation seeds content; it does not modify ERP business data or override the user's home page.
 Company checklists are derived on demand, so existing and newly provisioned companies work
 without an additional tenant bootstrap command. Confirmations are persisted when completed.
