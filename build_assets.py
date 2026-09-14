@@ -106,7 +106,14 @@ write(
     MODULE / "workspace" / "royce_learn" / "royce_learn.json",
     {
         "doctype": "Workspace",
-        "name": "Royce Learn",
+        # Deliberately NOT "Royce Learn" -- Frappe slugifies a Workspace's own
+        # name to its route, and a bare "Royce Learn" collides with the Page
+        # below (route "royce-learn"), which the router always resolves as the
+        # Workspace first -- silently making the actual content page
+        # unreachable and its own shortcut a no-op back to itself. Real bug,
+        # found live in production 2026-09-14. label/title stay "Royce Learn"
+        # since only "name" drives routing.
+        "name": "Royce Learn Hub",
         "label": "Royce Learn",
         "title": "Royce Learn",
         "module": "Royce Learn",
@@ -134,7 +141,7 @@ write(
         "standard": 1,
         "header_icon": "education",
         "items": [
-            {"label": "Royce Learn", "link_type": "Workspace", "link_to": "Royce Learn", "type": "Link"}
+            {"label": "Royce Learn", "link_type": "Workspace", "link_to": "Royce Learn Hub", "type": "Link"}
         ],
     },
 )
