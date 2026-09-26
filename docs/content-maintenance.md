@@ -15,9 +15,12 @@ related DocType, permission requirement, required apps, and optional YouTube vid
 6. Run catalog tests, stage the change, and deploy the app update through the normal rollout.
 
 Initial guides are implementation-informed drafts and require staging/content-owner review.
-No videos have been recorded or invented. The generator `build_assets.py` was used to scaffold
-this release; running it again overwrites the catalog with the initial seed. Maintain the
-catalog directly for future editorial work.
+No videos have been recorded or invented.
+
+`catalog.json` is the only source for guides. `build_assets.py` generates the app's Frappe
+metadata (DocTypes, the getting-started Page, Workspace, Workspace Sidebar, Desktop Icon) and
+never touches the catalog. To change that metadata, edit `build_assets.py` and re-run it; never
+edit the generated JSON by hand. `tests/test_generated_assets.py` fails if the two differ.
 
 Sync uses stable IDs and retires removed guides without deleting linked progress. Existing
 completion remains valid, with an 'updated since completion' indicator for changed versions.
