@@ -15,7 +15,7 @@
       "minutes": 3,
       "video_id": "",
       "keywords": [],
-      "body": "Your provisioned site already has a Company and a Kenya accounting baseline. Review these before entering transactions.\n\n1. Open Company and select the company shown in your Getting Started dashboard.\n2. Check the legal business name, abbreviation, country, and default currency.\n3. Review company addresses and contact details where configured.\n4. Ask your accountant to review the chart of accounts and applicable tax templates.\n5. Check that a Fiscal Year covers your transaction dates. Provisioning creates a starting baseline; confirm your own accounting period.\n6. Return to Royce Learn and confirm this task for the selected company.\n\nChanging company settings can affect subsequent transactions. Make changes with the appropriate permissions and accounting review.\n\nIf you cannot edit Company, ask a company administrator to complete this task. Selecting another company shows a separate checklist."
+      "body": "Your provisioned site already has a Company and a Kenya accounting baseline. Review these before entering transactions.\n\n1. Open Company and select the company shown in your Getting Started dashboard.\n2. Check the legal business name, abbreviation, country, and default currency.\n3. Review company addresses and contact details where configured.\n4. Ask your accountant to review the chart of accounts and applicable tax templates.\n5. Check that a Fiscal Year covers your transaction dates. Provisioning creates a starting baseline; confirm your own accounting period.\n6. Return to Learning and confirm this task for the selected company.\n\nChanging company settings can affect subsequent transactions. Make changes with the appropriate permissions and accounting review.\n\nIf you cannot edit Company, ask a company administrator to complete this task. Selecting another company shows a separate checklist."
     },
     {
       "id": "users-and-roles",
@@ -51,7 +51,7 @@
         "service",
         "inventory"
       ],
-      "body": "1. Open Item and select New if you have create permission.\n2. Enter a clear Item Code and Item Name, then choose an Item Group and stock unit of measure.\n3. For services, review whether Maintain Stock should be disabled. For stocked products, configure inventory details with your stock administrator.\n4. Review item defaults for the company that will use the item, including accounts and warehouses where applicable.\n5. Save the item and confirm it can be selected on the intended transaction.\n6. Return to Royce Learn and confirm that the selected company's products or services are ready.\n\nItems are shared site masters. Their existence alone does not prove that they are configured for every company.\n\nIf an item cannot be selected, check whether it is disabled, whether the transaction allows it, and whether you have access. Tax treatment needs separate review."
+      "body": "1. Open Item and select New if you have create permission.\n2. Enter a clear Item Code and Item Name, then choose an Item Group and stock unit of measure.\n3. For services, review whether Maintain Stock should be disabled. For stocked products, configure inventory details with your stock administrator.\n4. Review item defaults for the company that will use the item, including accounts and warehouses where applicable.\n5. Save the item and confirm it can be selected on the intended transaction.\n6. Return to Learning and confirm that the selected company's products or services are ready.\n\nItems are shared site masters. Their existence alone does not prove that they are configured for every company.\n\nIf an item cannot be selected, check whether it is disabled, whether the transaction allows it, and whether you have access. Tax treatment needs separate review."
     },
     {
       "id": "customers",
@@ -106,7 +106,7 @@
         "invoice",
         "submit"
       ],
-      "body": "1. Open Sales Invoice and choose New if you have create permission.\n2. Select the intended Company and Customer. Check the posting date and due date.\n3. Add products or services, quantities, and rates.\n4. Review currency, receivable account, addresses, and any applicable taxes with your accountant's approved configuration.\n5. Save and review the totals. A saved draft has not completed the accounting transaction.\n6. Submit only when the invoice is correct and you have the required permission.\n7. Open print preview and check the customer-facing document before sending it.\n\nRoyce Learn detects a submitted non-return invoice for the selected company. Drafts and invoices in other companies do not complete the task. If the qualifying invoice is cancelled, the evidence check updates when the dashboard reloads.\n\nIf submission fails, read the exact validation message. Common causes include missing account defaults, unavailable stock, or dates outside an active fiscal year. This guide does not assume eTIMS is installed or configured."
+      "body": "1. Open Sales Invoice and choose New if you have create permission.\n2. Select the intended Company and Customer. Check the posting date and due date.\n3. Add products or services, quantities, and rates.\n4. Review currency, receivable account, addresses, and any applicable taxes with your accountant's approved configuration.\n5. Save and review the totals. A saved draft has not completed the accounting transaction.\n6. Submit only when the invoice is correct and you have the required permission.\n7. Open print preview and check the customer-facing document before sending it.\n\nLearning detects a submitted non-return invoice for the selected company. Drafts and invoices in other companies do not complete the task. If the qualifying invoice is cancelled, the evidence check updates when the dashboard reloads.\n\nIf submission fails, read the exact validation message. Common causes include missing account defaults, unavailable stock, or dates outside an active fiscal year. This guide does not assume eTIMS is installed or configured."
     },
     {
       "id": "receive-payment",
@@ -126,12 +126,12 @@
         "allocation",
         "bank"
       ],
-      "body": "1. Open the submitted Sales Invoice and use its payment action where available, or create a Payment Entry.\n2. Select Receive and Customer, then confirm the Company and customer.\n3. Choose the correct bank or cash account and enter the actual payment amount and date.\n4. In References, select the Sales Invoice and review the allocated amount.\n5. Check any difference or exchange-rate entries with your accountant.\n6. Save, review, and submit when correct.\n7. Check the invoice's outstanding balance after posting.\n\nRoyce Learn checks for a submitted customer receipt in the selected company with a positive allocation to a Sales Invoice. An unallocated advance or draft payment does not complete this task.\n\nIf an invoice is missing from the reference list, check its company, customer, submission status, and outstanding amount. Record real payments only; reading this lesson is separate from submitting a payment."
+      "body": "1. Open the submitted Sales Invoice and use its payment action where available, or create a Payment Entry.\n2. Select Receive and Customer, then confirm the Company and customer.\n3. Choose the correct bank or cash account and enter the actual payment amount and date.\n4. In References, select the Sales Invoice and review the allocated amount.\n5. Check any difference or exchange-rate entries with your accountant.\n6. Save, review, and submit when correct.\n7. Check the invoice's outstanding balance after posting.\n\nLearning checks for a submitted customer receipt in the selected company with a positive allocation to a Sales Invoice. An unallocated advance or draft payment does not complete this task.\n\nIf an invoice is missing from the reference list, check its company, customer, submission status, and outstanding amount. Record real payments only; reading this lesson is separate from submitting a payment."
     },
     {
       "id": "payroll-getting-started",
       "title": "Review your payroll baseline",
-      "summary": "Understand what Royce Payroll configures and what you still need to prepare.",
+      "summary": "Understand what Kenya Payroll configures and what you still need to prepare.",
       "category": "Payroll",
       "doctype": "Employee",
       "permission": "read",
@@ -144,14 +144,14 @@
       "minutes": 5,
       "video_id": "",
       "keywords": [],
-      "body": "Royce provisioning can prepare statutory accounts, salary components, a salary structure, payroll periods, and holiday settings through Royce Payroll KE.\n\n1. Ask your payroll administrator to review the effective Payroll Rates record and the generated structure.\n2. Create Employee records for the correct company and verify employee identifiers and payroll details.\n3. Review Salary Structure Assignments and dates for each employee.\n4. Confirm attendance, leave, and holiday configuration before processing payroll.\n5. Validate a representative payroll run and its reports before production use.\n\nGenerated defaults do not replace review of current statutory rules or employee-specific circumstances. This introductory guide intentionally contains no hard-coded statutory rates."
+      "body": "Your ERP can come with statutory accounts, salary components, a salary structure, payroll periods, and holiday settings already prepared by Kenya Payroll.\n\n1. Ask your payroll administrator to review the effective Kenya Payroll Rates record and the generated structure.\n2. Create Employee records for the correct company and verify employee identifiers and payroll details.\n3. Review Salary Structure Assignments and dates for each employee.\n4. Confirm attendance, leave, and holiday configuration before processing payroll.\n5. Validate a representative payroll run and its reports before production use.\n\nGenerated defaults do not replace review of current statutory rules or employee-specific circumstances. This introductory guide intentionally contains no hard-coded statutory rates."
     },
     {
       "id": "sms-getting-started",
-      "title": "Configure Royce Talk",
+      "title": "Configure Bulk SMS",
       "summary": "Prepare SMS settings before sending notifications.",
-      "category": "Royce Apps",
-      "doctype": "RoyceTalk Settings",
+      "category": "SMS",
+      "doctype": "Bulk SMS Settings",
       "permission": "read",
       "required_apps": [
         "erpnext",
@@ -161,14 +161,14 @@
       "minutes": 3,
       "video_id": "",
       "keywords": [],
-      "body": "Installing Royce Talk does not create an SMS account or register a Sender ID.\n\n1. Obtain your approved Sender ID and Royce Talk API credentials through your account process.\n2. Open RoyceTalk Settings and configure them using an authorized administrator account.\n3. Review balance and perform a test send to a number you control.\n4. Review notification templates before enabling automated messages.\n5. For marketing campaigns, review recipients and consent before sending.\n\nRoyce provisioning leaves the site-wide SMS gateway override disabled. Enabling it affects Frappe's built-in SMS traffic too, so review that setting deliberately.\n\nKeep API credentials private. If sends fail, inspect RoyceTalk SMS Log and the account balance."
+      "body": "Installing Bulk SMS does not create an SMS account or register a Sender ID.\n\n1. Obtain your approved Sender ID and SMS API credentials through your account process.\n2. Open Bulk SMS Settings and configure them using an authorized administrator account.\n3. Review balance and perform a test send to a number you control.\n4. Review notification templates before enabling automated messages.\n5. For marketing campaigns, review recipients and consent before sending.\n\nNew sites start with the site-wide SMS gateway override disabled. Enabling it affects Frappe's built-in SMS traffic too, so review that setting deliberately.\n\nKeep API credentials private. If sends fail, inspect Bulk SMS Log and the account balance."
     },
     {
       "id": "vat-withholding",
       "title": "WHT and VAT Withholding (WVAT)",
       "summary": "Handle tax you withhold from suppliers, and tax a customer withholds from you.",
       "category": "Accounting",
-      "doctype": "Kenyan Accountant Settings",
+      "doctype": "Kenya Accounting Settings",
       "permission": "read",
       "required_apps": [
         "erpnext",
@@ -184,7 +184,7 @@
         "vat withholding",
         "parastatal"
       ],
-      "body": "Most businesses only ever deal with WHT (Withholding Tax, Income Tax Act) -- withheld from specific payment types like professional or contractual fees, by any payer, not just special appointees. VAT Withholding (WVAT, VAT Act) is different: only businesses KRA has specifically gazetted as Appointed VAT Withholding Agents may or must withhold it, at 2% of the taxable value. A gazetted agent (commonly a parastatal or large corporate) paying a VAT-registered supplier for a WHT-eligible service can owe both at once, independently, on the same invoice.\n\nThis affects you in two possible directions:\n\n1. If KRA has gazetted your own business as a VAT Withholding Agent, open Kenyan Accountant Settings and tick 'We Are a KRA-Appointed VAT Withholding Agent'. Do this only once you actually have that status -- withholding VAT without it is not authorized.\n2. Review the VAT Withholding Rate (defaults to 2% -- confirm against current KRA guidance).\n3. For each supplier you must withhold VAT from, tick 'Subject to VAT Withholding (WVAT)' on their Supplier record.\n4. If one of your customers withholds tax from you instead (for example a parastatal client), tick 'Withholds Tax From Us (e.g. Parastatal)' on their Customer record.\n5. When recording a Payment Entry to or from a flagged party, use the 'Add VAT Withholding' button to add the deduction at the correct rate instead of computing it by hand. It also adjusts the payment amount and deduction sign correctly -- use the button rather than typing a deduction row in by hand, since that direction is easy to get backwards.\n6. If a customer withheld WHT specifically (not VAT), use the 'Add WHT Withheld' button on the same payment instead -- there's no single rate to compute automatically (it depends on the payment type), so enter the amount from their withholding certificate directly, with an optional certificate number.\n7. Open Withholding Tax Credit to see every WHT and VAT Withholding credit in one place, including any you haven't yet marked as claimed on a filed return.\n\nWHT your own business withholds from a supplier needs no new setup here -- it still works through your existing WHT categories on Purchase Invoice, unchanged. WHT a customer withholds from you is recorded via the 'Add WHT Withheld' button above, not by assigning a category to the customer -- an earlier version of this feature tried that and it turned out to represent a different Indian tax concept (TCS) that doesn't apply in Kenya, so it was replaced with the certificate-based button instead.\n\nThis is a compliance-sensitive feature. If you are unsure whether your business is a gazetted agent, or which of your customers are, confirm with your accountant or KRA before ticking anything here."
+      "body": "Most businesses only ever deal with WHT (Withholding Tax, Income Tax Act) -- withheld from specific payment types like professional or contractual fees, by any payer, not just special appointees. VAT Withholding (WVAT, VAT Act) is different: only businesses KRA has specifically gazetted as Appointed VAT Withholding Agents may or must withhold it, at 2% of the taxable value. A gazetted agent (commonly a parastatal or large corporate) paying a VAT-registered supplier for a WHT-eligible service can owe both at once, independently, on the same invoice.\n\nThis affects you in two possible directions:\n\n1. If KRA has gazetted your own business as a VAT Withholding Agent, open Kenya Accounting Settings and tick 'We Are a KRA-Appointed VAT Withholding Agent'. Do this only once you actually have that status -- withholding VAT without it is not authorized.\n2. Review the VAT Withholding Rate (defaults to 2% -- confirm against current KRA guidance).\n3. For each supplier you must withhold VAT from, tick 'Subject to VAT Withholding (WVAT)' on their Supplier record.\n4. If one of your customers withholds tax from you instead (for example a parastatal client), tick 'Withholds Tax From Us (e.g. Parastatal)' on their Customer record.\n5. When recording a Payment Entry to or from a flagged party, use the 'Add VAT Withholding' button to add the deduction at the correct rate instead of computing it by hand. It also adjusts the payment amount and deduction sign correctly -- use the button rather than typing a deduction row in by hand, since that direction is easy to get backwards.\n6. If a customer withheld WHT specifically (not VAT), use the 'Add WHT Withheld' button on the same payment instead -- there's no single rate to compute automatically (it depends on the payment type), so enter the amount from their withholding certificate directly, with an optional certificate number.\n7. Open Withholding Tax Credit to see every WHT and VAT Withholding credit in one place, including any you haven't yet marked as claimed on a filed return.\n\nWHT your own business withholds from a supplier needs no new setup here -- it still works through your existing WHT categories on Purchase Invoice, unchanged. WHT a customer withholds from you is recorded via the 'Add WHT Withheld' button above, not by assigning a category to the customer -- an earlier version of this feature tried that and it turned out to represent a different Indian tax concept (TCS) that doesn't apply in Kenya, so it was replaced with the certificate-based button instead.\n\nThis is a compliance-sensitive feature. If you are unsure whether your business is a gazetted agent, or which of your customers are, confirm with your accountant or KRA before ticking anything here."
     }
   ],
   "paths": [
@@ -221,7 +221,7 @@
     },
     {
       "id": "sms-basics",
-      "title": "Royce Talk Basics",
+      "title": "SMS Basics",
       "summary": "Set up customer notifications.",
       "guides": [
         "sms-getting-started"

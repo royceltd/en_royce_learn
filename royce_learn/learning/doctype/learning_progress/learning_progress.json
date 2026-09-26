@@ -1,31 +1,31 @@
 {
   "doctype": "DocType",
-  "name": "Royce Learn Setup",
-  "module": "Royce Learn",
+  "name": "Learning Progress",
+  "module": "Learning",
   "engine": "InnoDB",
   "autoname": "hash",
   "field_order": [
-    "company",
-    "step_id",
+    "user",
+    "guide",
     "status",
-    "confirmed_by",
-    "confirmed_at",
-    "note"
+    "completed_at",
+    "completed_version"
   ],
   "fields": [
     {
-      "fieldname": "company",
+      "fieldname": "user",
       "fieldtype": "Link",
-      "label": "Company",
-      "options": "Company",
+      "label": "User",
+      "options": "User",
       "reqd": 1,
       "in_list_view": 1,
       "read_only": 1
     },
     {
-      "fieldname": "step_id",
-      "fieldtype": "Data",
-      "label": "Task",
+      "fieldname": "guide",
+      "fieldtype": "Link",
+      "label": "Guide",
+      "options": "Learning Guide",
       "reqd": 1,
       "in_list_view": 1,
       "read_only": 1
@@ -34,28 +34,21 @@
       "fieldname": "status",
       "fieldtype": "Select",
       "label": "Status",
-      "options": "Pending\nComplete\nNot Applicable",
+      "options": "In Progress\nCompleted",
       "reqd": 1,
       "in_list_view": 1,
       "read_only": 1
     },
     {
-      "fieldname": "confirmed_by",
-      "fieldtype": "Link",
-      "label": "Confirmed By",
-      "options": "User",
-      "read_only": 1
-    },
-    {
-      "fieldname": "confirmed_at",
+      "fieldname": "completed_at",
       "fieldtype": "Datetime",
-      "label": "Confirmed At",
+      "label": "Completed At",
       "read_only": 1
     },
     {
-      "fieldname": "note",
-      "fieldtype": "Small Text",
-      "label": "Note",
+      "fieldname": "completed_version",
+      "fieldtype": "Data",
+      "label": "Completed Version",
       "read_only": 1
     }
   ],

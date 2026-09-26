@@ -111,7 +111,7 @@ def get_setup(company):
             status = "Complete" if evidence else "Pending"
         else:
             saved = frappe.db.get_value(
-                "Royce Learn Setup",
+                "Learning Setup Task",
                 record_name(company, step["id"]),
                 ["status", "confirmed_by", "confirmed_at", "note"],
                 as_dict=True,
@@ -156,7 +156,7 @@ def confirm(company, step_id, status, note=""):
     }
     # SQL upsert avoids duplicate-name races. Fields are fixed, all values parameterized.
     frappe.db.sql(
-        """INSERT INTO `tabRoyce Learn Setup`
+        """INSERT INTO `tabLearning Setup Task`
         (name, creation, modified, owner, modified_by, docstatus, idx,
          company, step_id, status, confirmed_by, confirmed_at, note)
         VALUES (%s, NOW(), NOW(), %s, %s, 0, 0, %s, %s, %s, %s, %s, %s)

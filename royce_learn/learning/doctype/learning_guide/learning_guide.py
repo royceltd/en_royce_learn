@@ -1,5 +1,5 @@
 from frappe.model.document import Document
 
 
-class RoyceLearnSetup(Document):
+class LearningGuide(Document):
     pass

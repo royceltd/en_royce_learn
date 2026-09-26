@@ -7,7 +7,7 @@ from royce_learn.catalog import load_catalog, permitted
 def require_user():
     user = frappe.session.user
     if user == "Guest" or frappe.db.get_value("User", user, "user_type") != "System User":
-        frappe.throw(_("Royce Learn is available to signed-in ERP users."), frappe.PermissionError)
+        frappe.throw(_("Learning is available to signed-in ERP users."), frappe.PermissionError)
     return user
 
 

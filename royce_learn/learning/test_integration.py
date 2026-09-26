@@ -8,7 +8,7 @@ from royce_learn.install import sync_content
 from royce_learn.onboarding import confirm, get_setup
 
 
-class TestRoyceLearn(IntegrationTestCase):
+class TestLearning(IntegrationTestCase):
     def setUp(self):
         frappe.set_user("Administrator")
         sync_content()
@@ -19,17 +19,17 @@ class TestRoyceLearn(IntegrationTestCase):
     def test_sync_keeps_ids_and_learning_progress(self):
         mark_learning("sales-invoice", "Completed")
         sync_content()
-        self.assertTrue(frappe.db.exists("Royce Learn Guide", "sales-invoice"))
+        self.assertTrue(frappe.db.exists("Learning Guide", "sales-invoice"))
         self.assertEqual(
             frappe.db.get_value(
-                "Royce Learn Progress", {"user": "Administrator", "guide": "sales-invoice"}, "status"
+                "Learning Progress", {"user": "Administrator", "guide": "sales-invoice"}, "status"
             ),
             "Completed",
         )
         mark_learning("sales-invoice", "In Progress")
         self.assertEqual(
             frappe.db.get_value(
-                "Royce Learn Progress", {"user": "Administrator", "guide": "sales-invoice"}, "status"
+                "Learning Progress", {"user": "Administrator", "guide": "sales-invoice"}, "status"
             ),
             "Completed",
         )

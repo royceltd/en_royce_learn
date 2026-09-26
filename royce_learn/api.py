@@ -16,7 +16,7 @@ def _progress_name(user, guide):
 def _progress():
     user = require_user()
     rows = frappe.get_all(
-        "Royce Learn Progress",
+        "Learning Progress",
         filters={"user": user},
         fields=["guide", "status", "completed_version", "modified"],
     )
@@ -100,7 +100,7 @@ def mark_learning(guide_id, status):
     completed = now_datetime() if status == "Completed" else None
     version = item["version"] if completed else None
     frappe.db.sql(
-        """INSERT INTO `tabRoyce Learn Progress`
+        """INSERT INTO `tabLearning Progress`
         (name, creation, modified, owner, modified_by, docstatus, idx,
          user, guide, status, completed_at, completed_version)
         VALUES (%s, NOW(), NOW(), %s, %s, 0, 0, %s, %s, %s, %s, %s)

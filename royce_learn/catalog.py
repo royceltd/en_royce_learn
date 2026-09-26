@@ -15,7 +15,7 @@ def load_catalog():
 
 def validate_catalog(catalog):
     if catalog.get("schema_version") != 1:
-        raise ValueError("Unsupported Royce Learn content schema")
+        raise ValueError("Unsupported Learning content schema")
     ids = set()
     for guide in catalog["guides"]:
         key = guide["id"]

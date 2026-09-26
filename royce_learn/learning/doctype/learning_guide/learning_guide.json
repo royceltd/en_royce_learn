@@ -1,7 +1,7 @@
 {
   "doctype": "DocType",
-  "name": "Royce Learn Guide",
-  "module": "Royce Learn",
+  "name": "Learning Guide",
+  "module": "Learning",
   "engine": "InnoDB",
   "autoname": "hash",
   "field_order": [

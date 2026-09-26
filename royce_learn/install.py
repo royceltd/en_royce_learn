@@ -9,7 +9,7 @@ def before_install():
     from frappe import __version__ as frappe_version
 
     if any(v.split(".")[0] != "16" for v in (frappe_version, erpnext_version)):
-        frappe.throw(_("Royce Learn requires Frappe and ERPNext version 16."))
+        frappe.throw(_("Learning requires Frappe and ERPNext version 16."))
 
 
 def sync_content():
@@ -30,13 +30,13 @@ def sync_content():
             "keywords": " ".join(guide.get("keywords", [])),
             "published": 1,
         }
-        if frappe.db.exists("Royce Learn Guide", guide["id"]):
-            frappe.db.set_value("Royce Learn Guide", guide["id"], values)
+        if frappe.db.exists("Learning Guide", guide["id"]):
+            frappe.db.set_value("Learning Guide", guide["id"], values)
         else:
-            frappe.get_doc({"doctype": "Royce Learn Guide", "name": guide["id"], **values}).insert(
+            frappe.get_doc({"doctype": "Learning Guide", "name": guide["id"], **values}).insert(
                 ignore_permissions=True, set_name=guide["id"]
             )
     # Retire rather than delete, keeping linked history intact.
-    for name in frappe.get_all("Royce Learn Guide", pluck="name"):
+    for name in frappe.get_all("Learning Guide", pluck="name"):
         if name not in active:
-            frappe.db.set_value("Royce Learn Guide", name, "published", 0)
+            frappe.db.set_value("Learning Guide", name, "published", 0)

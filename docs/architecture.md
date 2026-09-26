@@ -2,11 +2,11 @@
 
 ## Boundaries
 
-Royce Learn is a tenant-local Frappe app. It neither connects to the internal Royce ERP
+Learning is a tenant-local Frappe app. It neither connects to the internal Royce ERP
 nor manages subscription invoices. No network connection is needed for guides or progress.
 
 The versioned `content/catalog.json` is the authoritative source in v1. Its written guides
-are mirrored into Royce Learn Guide records during installation/migration, keeping stable
+are mirrored into Learning Guide records during installation/migration, keeping stable
 IDs for Link fields and generic Desk access. Custom library endpoints read the bundled
 catalog; editing those mirrored records is not a supported authoring workflow.
 
@@ -16,10 +16,10 @@ required apps are installed and the user can access the relevant screen.
 
 ## Data
 
-- Royce Learn Guide: managed content and stable guide IDs.
-- Royce Learn Progress: one deterministic primary key per `(user, guide)`; includes the
+- Learning Guide: managed content and stable guide IDs.
+- Learning Progress: one deterministic primary key per `(user, guide)`; includes the
   completed content version. Completion never resets merely because a guide is opened again.
-- Royce Learn Setup: one deterministic key per `(company, step)`; confirmation status,
+- Learning Setup Task: one deterministic key per `(company, step)`; confirmation status,
   actor, timestamp, and optional note.
 
 Evidence-based tasks are evaluated live using permission-aware `frappe.get_list` calls.

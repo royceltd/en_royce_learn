@@ -14,7 +14,7 @@ def guide_query(user=None):
     if not _system_user(user):
         return "1=0"
     names = [frappe.db.escape(g["id"]) for g in allowed_guides(user)]
-    return "`tabRoyce Learn Guide`.`name` IN (" + ",".join(names) + ")" if names else "1=0"
+    return "`tabLearning Guide`.`name` IN (" + ",".join(names) + ")" if names else "1=0"
 
 
 def guide_permission(doc, user=None, ptype="read", **kwargs):
@@ -28,7 +28,7 @@ def progress_query(user=None):
     user = user or frappe.session.user
     if not _system_user(user):
         return "1=0"
-    return "`tabRoyce Learn Progress`.`user` = " + frappe.db.escape(user)
+    return "`tabLearning Progress`.`user` = " + frappe.db.escape(user)
 
 
 def progress_permission(doc, user=None, ptype="read", **kwargs):
@@ -42,7 +42,7 @@ def setup_query(user=None):
         return "1=0"
     companies = frappe.get_list("Company", pluck="name", user=user, limit_page_length=0)
     names = [frappe.db.escape(c) for c in companies]
-    return "`tabRoyce Learn Setup`.`company` IN (" + ",".join(names) + ")" if names else "1=0"
+    return "`tabLearning Setup Task`.`company` IN (" + ",".join(names) + ")" if names else "1=0"
 
 
 def setup_permission(doc, user=None, ptype="read", **kwargs):

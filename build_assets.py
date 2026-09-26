@@ -4,7 +4,7 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).parent / "royce_learn"
-MODULE = ROOT / "royce_learn"
+MODULE = ROOT / "learning"
 
 
 def write(path, value):
@@ -17,7 +17,7 @@ def field(name, kind, label, **kwargs):
 
 
 schemas = {
-    "Royce Learn Guide": [
+    "Learning Guide": [
         field("title", "Data", "Title", reqd=1, in_list_view=1),
         field("summary", "Small Text", "Summary"),
         field("category", "Data", "Topic", in_list_view=1),
@@ -29,14 +29,14 @@ schemas = {
         field("keywords", "Small Text", "Keywords"),
         field("published", "Check", "Published", default="1"),
     ],
-    "Royce Learn Progress": [
+    "Learning Progress": [
         field("user", "Link", "User", options="User", reqd=1, in_list_view=1),
-        field("guide", "Link", "Guide", options="Royce Learn Guide", reqd=1, in_list_view=1),
+        field("guide", "Link", "Guide", options="Learning Guide", reqd=1, in_list_view=1),
         field("status", "Select", "Status", options="In Progress\nCompleted", reqd=1, in_list_view=1),
         field("completed_at", "Datetime", "Completed At"),
         field("completed_version", "Data", "Completed Version"),
     ],
-    "Royce Learn Setup": [
+    "Learning Setup Task": [
         field("company", "Link", "Company", options="Company", reqd=1, in_list_view=1),
         field("step_id", "Data", "Task", reqd=1, in_list_view=1),
         field(
@@ -57,7 +57,7 @@ for name, fields in schemas.items():
         {
             "doctype": "DocType",
             "name": name,
-            "module": "Royce Learn",
+            "module": "Learning",
             "engine": "InnoDB",
             "autoname": "hash",
             "field_order": [f["fieldname"] for f in fields],
@@ -90,15 +90,15 @@ write(
         "doctype": "Page",
         "name": "getting-started",
         "page_name": "getting-started",
-        "module": "Royce Learn",
-        "title": "Royce Learn",
+        "module": "Learning",
+        "title": "Learning",
         "standard": "Yes",
         "system_page": 0,
         "roles": [{"role": "Desk User"}, {"role": "System Manager"}],
     },
 )
 workspace_content = [
-    {"id": "rl-header", "type": "header", "data": {"text": '<span class="h4">Royce Learn</span>', "col": 12}},
+    {"id": "rl-header", "type": "header", "data": {"text": '<span class="h4">Learning</span>', "col": 12}},
     {
         "id": "rl-shortcut",
         "type": "shortcut",
@@ -106,32 +106,33 @@ workspace_content = [
     },
 ]
 write(
-    MODULE / "workspace" / "royce_learn" / "royce_learn.json",
+    MODULE / "workspace" / "learning" / "learning.json",
     {
         "doctype": "Workspace",
-        # MUST be "Royce Learn" -- not "royce-learn"/"Royce Learn Hub"/anything
-        # else. Two real bugs already came from getting this wrong, both found
-        # live in production 2026-09-14:
-        # (1) naming it to match the app's own route ("Royce Learn" slugifies
-        #     to "royce-learn") collided with the content Page's own route --
-        #     the router always resolves a bare /app/royce-learn as the
-        #     Workspace first, silently making the Page unreachable and its own
-        #     shortcut a no-op back to itself. Fixed by moving the *Page* to
-        #     "getting-started" instead (see above), not the Workspace.
-        # (2) renaming the Workspace itself to "Royce Learn Hub" to dodge (1)
+        # MUST equal app_title ("Learning") -- Frappe v16 matches the app's
+        # Desktop Icon, Workspace and Workspace Sidebar by that exact string
+        # (frappe/desk/doctype/desktop_icon/desktop_icon.py). Two real bugs came
+        # from getting this wrong, both found live in production 2026-09-14,
+        # when the app was still titled "Royce Learn":
+        # (1) the Workspace's route (/app/royce-learn then, /app/learning now)
+        #     collided with the content Page's own route -- the router always
+        #     resolves a bare /app/<workspace> as the Workspace first, silently
+        #     making the Page unreachable and its own shortcut a no-op back to
+        #     itself. Fixed by moving the *Page* to "getting-started" instead
+        #     (see above), not the Workspace.
+        # (2) renaming the Workspace itself ("Royce Learn Hub") to dodge (1)
         #     broke Frappe's own app<->workspace naming convention: it started
-        #     auto-generating a second, orphaned "Royce Learn Hub" Workspace
-        #     Sidebar (app=None) alongside the real one, producing two visibly
-        #     different Desk icons for one app and losing this app's own
-        #     sidebar context in favor of whatever ERPNext workspace was last
-        #     active. The Workspace's name must match the app's natural
-        #     identity for both the app-switcher and sidebar-grouping to
-        #     collapse into one correctly; it is the Page's name that has to
-        #     move, never this one.
-        "name": "Royce Learn",
-        "label": "Royce Learn",
-        "title": "Royce Learn",
-        "module": "Royce Learn",
+        #     auto-generating a second, orphaned Workspace Sidebar (app=None)
+        #     alongside the real one, producing two visibly different Desk
+        #     icons for one app and losing this app's own sidebar context in
+        #     favor of whatever ERPNext workspace was last active. The
+        #     Workspace's name must match app_title for both the app-switcher
+        #     and sidebar-grouping to collapse into one correctly; it is the
+        #     Page's name that has to move, never this one.
+        "name": "Learning",
+        "label": "Learning",
+        "title": "Learning",
+        "module": "Learning",
         "app": "royce_learn",
         "public": 1,
         "is_hidden": 0,
@@ -147,29 +148,29 @@ write(
     },
 )
 write(
-    ROOT / "workspace_sidebar" / "royce_learn.json",
+    ROOT / "workspace_sidebar" / "learning.json",
     {
         "doctype": "Workspace Sidebar",
-        "name": "Royce Learn",
-        "title": "Royce Learn",
+        "name": "Learning",
+        "title": "Learning",
         "app": "royce_learn",
         "standard": 1,
         "header_icon": "education",
-        "items": [{"label": "Royce Learn", "link_type": "Workspace", "link_to": "Royce Learn", "type": "Link"}],
+        "items": [{"label": "Learning", "link_type": "Workspace", "link_to": "Learning", "type": "Link"}],
     },
 )
 write(
-    ROOT / "desktop_icon" / "royce_learn.json",
+    ROOT / "desktop_icon" / "learning.json",
     {
         "doctype": "Desktop Icon",
-        "name": "Royce Learn",
-        "label": "Royce Learn",
+        "name": "Learning",
+        "label": "Learning",
         "app": "royce_learn",
         "standard": 1,
         "hidden": 0,
         "icon_type": "Link",
         "link_type": "Workspace Sidebar",
-        "link_to": "Royce Learn",
+        "link_to": "Learning",
         "icon": "education",
         "bg_color": "blue",
         "roles": [],
@@ -212,7 +213,7 @@ guide(
 3. Review company addresses and contact details where configured.
 4. Ask your accountant to review the chart of accounts and applicable tax templates.
 5. Check that a Fiscal Year covers your transaction dates. Provisioning creates a starting baseline; confirm your own accounting period.
-6. Return to Royce Learn and confirm this task for the selected company.
+6. Return to Learning and confirm this task for the selected company.
 
 Changing company settings can affect subsequent transactions. Make changes with the appropriate permissions and accounting review.
 
@@ -246,7 +247,7 @@ guide(
 3. For services, review whether Maintain Stock should be disabled. For stocked products, configure inventory details with your stock administrator.
 4. Review item defaults for the company that will use the item, including accounts and warehouses where applicable.
 5. Save the item and confirm it can be selected on the intended transaction.
-6. Return to Royce Learn and confirm that the selected company's products or services are ready.
+6. Return to Learning and confirm that the selected company's products or services are ready.
 
 Items are shared site masters. Their existence alone does not prove that they are configured for every company.
 
@@ -303,7 +304,7 @@ guide(
 6. Submit only when the invoice is correct and you have the required permission.
 7. Open print preview and check the customer-facing document before sending it.
 
-Royce Learn detects a submitted non-return invoice for the selected company. Drafts and invoices in other companies do not complete the task. If the qualifying invoice is cancelled, the evidence check updates when the dashboard reloads.
+Learning detects a submitted non-return invoice for the selected company. Drafts and invoices in other companies do not complete the task. If the qualifying invoice is cancelled, the evidence check updates when the dashboard reloads.
 
 If submission fails, read the exact validation message. Common causes include missing account defaults, unavailable stock, or dates outside an active fiscal year. This guide does not assume eTIMS is installed or configured.""",
     minutes=4,
@@ -323,7 +324,7 @@ guide(
 6. Save, review, and submit when correct.
 7. Check the invoice's outstanding balance after posting.
 
-Royce Learn checks for a submitted customer receipt in the selected company with a positive allocation to a Sales Invoice. An unallocated advance or draft payment does not complete this task.
+Learning checks for a submitted customer receipt in the selected company with a positive allocation to a Sales Invoice. An unallocated advance or draft payment does not complete this task.
 
 If an invoice is missing from the reference list, check its company, customer, submission status, and outstanding amount. Record real payments only; reading this lesson is separate from submitting a payment.""",
     minutes=4,
@@ -332,12 +333,12 @@ If an invoice is missing from the reference list, check its company, customer, s
 guide(
     "payroll-getting-started",
     "Review your payroll baseline",
-    "Understand what Royce Payroll configures and what you still need to prepare.",
+    "Understand what Kenya Payroll configures and what you still need to prepare.",
     "Payroll",
     "Employee",
-    """Royce provisioning can prepare statutory accounts, salary components, a salary structure, payroll periods, and holiday settings through Royce Payroll KE.
+    """Your ERP can come with statutory accounts, salary components, a salary structure, payroll periods, and holiday settings already prepared by Kenya Payroll.
 
-1. Ask your payroll administrator to review the effective Payroll Rates record and the generated structure.
+1. Ask your payroll administrator to review the effective Kenya Payroll Rates record and the generated structure.
 2. Create Employee records for the correct company and verify employee identifiers and payroll details.
 3. Review Salary Structure Assignments and dates for each employee.
 4. Confirm attendance, leave, and holiday configuration before processing payroll.
@@ -349,21 +350,21 @@ Generated defaults do not replace review of current statutory rules or employee-
 )
 guide(
     "sms-getting-started",
-    "Configure Royce Talk",
+    "Configure Bulk SMS",
     "Prepare SMS settings before sending notifications.",
-    "Royce Apps",
-    "RoyceTalk Settings",
-    """Installing Royce Talk does not create an SMS account or register a Sender ID.
+    "SMS",
+    "Bulk SMS Settings",
+    """Installing Bulk SMS does not create an SMS account or register a Sender ID.
 
-1. Obtain your approved Sender ID and Royce Talk API credentials through your account process.
-2. Open RoyceTalk Settings and configure them using an authorized administrator account.
+1. Obtain your approved Sender ID and SMS API credentials through your account process.
+2. Open Bulk SMS Settings and configure them using an authorized administrator account.
 3. Review balance and perform a test send to a number you control.
 4. Review notification templates before enabling automated messages.
 5. For marketing campaigns, review recipients and consent before sending.
 
-Royce provisioning leaves the site-wide SMS gateway override disabled. Enabling it affects Frappe's built-in SMS traffic too, so review that setting deliberately.
+New sites start with the site-wide SMS gateway override disabled. Enabling it affects Frappe's built-in SMS traffic too, so review that setting deliberately.
 
-Keep API credentials private. If sends fail, inspect RoyceTalk SMS Log and the account balance.""",
+Keep API credentials private. If sends fail, inspect Bulk SMS Log and the account balance.""",
     apps=["erpnext", "royce_talk"],
 )
 write(
@@ -392,7 +393,7 @@ write(
             },
             {
                 "id": "sms-basics",
-                "title": "Royce Talk Basics",
+                "title": "SMS Basics",
                 "summary": "Set up customer notifications.",
                 "guides": ["sms-getting-started"],
             },

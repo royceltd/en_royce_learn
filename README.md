@@ -1,4 +1,4 @@
-# Royce Learn
+# Learning
 
 Tenant onboarding and contextual learning for **Frappe/ERPNext version 16**.
 Version 0.1.0: implementation candidate; staging acceptance is required before production.
@@ -31,7 +31,7 @@ bench --site <staging-site> migrate
 bench --site <staging-site> clear-cache
 ```
 
-Open Royce Learn from the Desk, or navigate to the `getting-started` Page.
+Open Learning from the Desk, or navigate to the `getting-started` Page.
 Installation seeds content; it does not modify ERP business data or override the user's home page.
 Company checklists are derived on demand, so existing and newly provisioned companies work
 without an additional tenant bootstrap command. Confirmations are persisted when completed.
@@ -47,14 +47,14 @@ Local fast checks:
 python -m unittest discover -s tests -v
 python -m compileall -q royce_learn
 node --check royce_learn/public/js/contextual_help.js
-node --check royce_learn/royce_learn/page/royce_learn/royce_learn.js
+node --check royce_learn/learning/page/getting_started/getting_started.js
 ```
 
 Real v16 integration tests on a disposable staging site:
 
 ```sh
 bench --site <test-site> set-config allow_tests true
-bench --site <test-site> run-tests --app royce_learn --module royce_learn.royce_learn.test_integration
+bench --site <test-site> run-tests --app royce_learn --module royce_learn.learning.test_integration
 ```
 
 The local environment has no Frappe bench; the integration suite and live UI checks have

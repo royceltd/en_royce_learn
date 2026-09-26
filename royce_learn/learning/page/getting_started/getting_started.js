@@ -1,5 +1,5 @@
 frappe.pages['getting-started'].on_page_load = function(wrapper) {
-    const page = frappe.ui.make_app_page({parent: wrapper, title: __('Royce Learn'), single_column: true});
+    const page = frappe.ui.make_app_page({parent: wrapper, title: __('Learning'), single_column: true});
     const root = $('<div class="royce-learn">').appendTo(page.main);
     let company = null;
     let currentDoctype = '';
@@ -142,5 +142,5 @@ frappe.pages['getting-started'].on_page_load = function(wrapper) {
     };
 };
 frappe.pages['getting-started'].on_page_show = function(wrapper) {
-    wrapper.royce_learn_load().catch(() => frappe.msgprint(__('Royce Learn could not load. Please try again.')));
+    wrapper.royce_learn_load().catch(() => frappe.msgprint(__('Learning could not load. Please try again.')));
 };

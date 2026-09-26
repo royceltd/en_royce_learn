@@ -1,0 +1,24 @@
+{
+  "doctype": "Workspace",
+  "name": "Learning",
+  "label": "Learning",
+  "title": "Learning",
+  "module": "Learning",
+  "app": "royce_learn",
+  "public": 1,
+  "is_hidden": 0,
+  "icon": "education",
+  "content": "[{\"id\": \"rl-header\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\">Learning</span>\", \"col\": 12}}, {\"id\": \"rl-shortcut\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Getting Started & Guides\", \"col\": 4}}]",
+  "roles": [],
+  "links": [],
+  "charts": [],
+  "number_cards": [],
+  "shortcuts": [
+    {
+      "label": "Getting Started & Guides",
+      "type": "Page",
+      "link_to": "getting-started",
+      "color": "Blue"
+    }
+  ]
+}
